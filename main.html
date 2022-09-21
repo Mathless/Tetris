@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tetris</title>
+    <style>
+        .nextTetromino{
+            margin: 10px;
+        }
+        html, body {
+            height: 100%;
+        }
+        /*делаем чёрный фон и выравниваем всё по центру*/
+        body {
+            background: #A7D2CB;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /*толщина холста — 1 пиксель, белый цвет*/
+        canvas {
+            border: 5px solid #874C62;
+            border-radius: 10px;
+        }
+        .game{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .start-button{
+            margin-top: 20px;
+            background-color: #874C62; /* Green */
+            border: none;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .container{
+            margin: 10px;
+            border: 5px solid #874C62;
+            border-radius: 10px;
+            font-size: large;
+        }
+        .current-score{ margin: 10px;
+            border-radius: 10px;
+            font-size: large;}
+    </style>
+</head>
+
+<body onload="function onLoad() {
+document.getElementById('username').innerHTML = localStorage.username;
+}
+onLoad()">
+
+<script type="module" src="main.js"></script>
+<div class="score-and-next-tetr">
+    <div class="current-score">
+        <p id="username"></p>
+        <p id="current-score">Your score: 0</p>
+        <p id="current-level">Level: 1</p>
+    </div>
+    <div class="nextTetromino">
+        <canvas width="160" height="160" id="canvasNextTetromino"></canvas>
+    </div>
+</div>
+<div class="game">
+
+    <canvas width="400" height="800" id="canvasGame"></canvas>
+    <div>
+        <button class="start-button" id="start-button" style="cursor: pointer;"><b>Start!</b></button>
+    </div>
+
+
+</div>
+<div class='container' id="score-table"></div>
+
+<script type="module">
+    import {createGame} from './main.js';
+
+    document.querySelector('#start-button').addEventListener('click', createGame);
+
+    import {scoreTable} from "./score-table.js";
+
+    window.addEventListener('DOMContentLoaded', scoreTable);
+</script>
+
+</body>
+</html>

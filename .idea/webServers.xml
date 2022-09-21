@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f4e38a32-e5cc-445b-83b3-78e4a52098db" name="tyoma" url="https://localhost:8888">
+        <fileTransfer mountedRoot="$PROJECT_DIR$" accessType="MOUNT" port="0" />
+      </webServer>
+      <webServer id="b5eea08e-b218-46d6-8cd5-5eb6180c9db1" name="tetris" url="http://localhost:9821">
+        <fileTransfer accessType="LOCAL" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
